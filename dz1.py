@@ -49,9 +49,9 @@ if __name__ == '__main__':
     # Tests for function "parse_cookies"
     assert parse_cookies('') == {}
     assert parse_cookies('name=Sasha;') == {'name': 'Sasha'}
-    assert parse_cookies('name=Dima;color=red;') == {'name': 'Dima', 'color': 'red'}
-    assert parse_cookies('value=123;name=Sasha;') == {'value': '123', 'name': 'Sasha'}
-    assert parse_cookies('name=Dima;') == {'name': 'Dima'}
+    assert parse_cookies('name=Dima; color=white;') == {'name': 'Dima', 'color': 'white'}
+    assert parse_cookies('value=12345; name=Sasha;') == {'value': '12345', 'name': 'Sasha'}
+    assert parse_cookies('name=Roma;') == {'name': 'Roma'}
     assert parse_cookies('path=PATH;Content-type=text\html;') == {'path': 'PATH', 'Content-type': 'text\html'}
     assert parse_cookies('DOMAIN=domain_name;') == {'DOMAIN': 'domain_name'}
-    assert parse_cookies('tasty_cookie=strawberry;') == {'tasty_cookie': 'strawberry'}
+    assert parse_cookies('tasty_cookie=banana;') == {'tasty_cookie': 'banana'}
